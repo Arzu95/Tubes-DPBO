@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class Item implements crudInterface<Item> {
+public class Item implements CrudInterface<Item> {
     private String namaBarang;
     private int stok;
     private double hargaBarang;
