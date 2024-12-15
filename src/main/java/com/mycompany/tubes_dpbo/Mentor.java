@@ -4,10 +4,10 @@
  */
 package com.mycompany.tubes_dpbo;
 
-/**
- *
- * @author applejenius.id
- */
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
 class Mentor extends User {
     private List<String> listKelas;
     private List<LocalDate> ketersediaan;
