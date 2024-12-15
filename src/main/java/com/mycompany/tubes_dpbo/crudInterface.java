@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author riyan
  */
-public interface crudInterface<T> {
+public interface CrudInterface<T> {
     HashMap<Integer, List<T>> get();
     T getById(int id);
     void create(T entity);
