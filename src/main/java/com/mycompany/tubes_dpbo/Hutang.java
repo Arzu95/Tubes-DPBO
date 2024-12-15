@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class Hutang implements crudInterface<Hutang> {
+public class Hutang implements CrudInterface<Hutang> {
     private int idPenghutang;
     private String namaPenghutang;
     private String nomorTelepon;
