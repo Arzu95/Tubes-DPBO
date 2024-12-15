@@ -1,15 +1,18 @@
 package com.mycompany.tubes_dpbo;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class Hutang implements crudInterface {
+public class Hutang implements crudInterface<Hutang> {
     private int idPenghutang;
     private String namaPenghutang;
     private String nomorTelepon;
     private String alamat;
     private double nilaiHutang;
     private boolean lunas;
+    
+    private static List<Hutang> hutangList = new ArrayList<>();
 
     public Hutang(int idPenghutang, String namaPenghutang, String nomorTelepon, String alamat, double nilaiHutang, boolean lunas) {
         this.idPenghutang = idPenghutang;
@@ -68,21 +71,38 @@ public class Hutang implements crudInterface {
         this.lunas = lunas;
     }
 
-   
+    @Override
+    public HashMap<Integer,List <Hutang>> get() {
+        HashMap<Integer, List <Hutang>> dataHutang = new HashMap<>();
+            return dataHutang;
+
+    }
+
+    @Override
+    public Hutang getById(int id) {
+    for (Hutang hutang : hutangList) {
+        if (hutang.getIdPenghutang() == id) {
+            return hutang;
+        }
+    }
+    System.out.println("Data dengan ID " + id + " tidak ditemukan.");
+    return null;
+    }
+
      @Override
-     public void create(T entity){
-        System.out.println("Edit data hutang...");
+     public void create(Hutang entity){
+        System.out.println("Menambahkan data hutang: " + entity.getNamaPenghutang());
     }
 
     @Override
     public void delete(int id) {
-        System.out.println("Delete data hutang...");
+        System.out.println("Menghapus data hutang dengan ID: " + id);
     }
 
     @Override
-    public void update(T entity){
-        System.out.println("Update data hutang...");
-        this.lunas = true;
+    public void update(Hutang entity){
+        System.out.println("Memperbarui data hutang: " + entity.getNamaPenghutang());
+        entity.setLunas(true);
     }
     
     public void displayHutang() {
@@ -94,4 +114,5 @@ public class Hutang implements crudInterface {
         System.out.println("Status Lunas: " + (lunas ? "Lunas" : "Belum Lunas"));
     }
 
+}
    
