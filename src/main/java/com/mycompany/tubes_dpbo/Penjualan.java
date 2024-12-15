@@ -11,8 +11,6 @@ import java.util.List;
  *
  * @author applejenius.id
  */
-
-
 public class Penjualan {
     private List<String> listBarangTerjual;
     private String tanggalTerjual;

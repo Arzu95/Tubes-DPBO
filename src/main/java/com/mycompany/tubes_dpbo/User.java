@@ -8,6 +8,7 @@ package com.mycompany.tubes_dpbo;
  *
  * @author applejenius.id
  */
+
 public class User {
     private int userId;
     private String nama;
