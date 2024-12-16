@@ -109,4 +109,18 @@ public class Item implements CrudInterface<Item> {
             System.out.println("Item dengan ID " + id + " tidak ditemukan.");
         }
     }
+
+    public void showProductByCategory(String kategori) {
+        System.out.println("Menampilkan barang dengan kategori: " + kategori);
+        boolean found = false;
+        for (Item item : itemList) {
+            if (item.getKategori().equalsIgnoreCase(kategori)) {
+                System.out.println("Nama Barang: " + item.getNamaBarang() + ", Stok: " + item.getStok() + ", Harga: " + item.getHargaBarang());
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("Tidak ada barang dengan kategori: " + kategori);
+        }
+    }
 }
