@@ -2,13 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.tubes_dpbo;
+package tubes.dpbo.user;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-class Mentor extends User {
+
+public class Mentor extends User {
     private List<String> listKelas;
     private List<LocalDate> ketersediaan;
 

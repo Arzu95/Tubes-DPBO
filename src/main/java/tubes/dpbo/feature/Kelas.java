@@ -1,8 +1,9 @@
-package com.mycompany.tubes_dpbo;
+package tubes.dpbo.feature;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import tubes.dpbo.user.Mentor;
+import tubes.dpbo.user.UMKM;
 /**
  * Kelas yang merepresentasikan sebuah pelatihan atau kursus dengan daftar mentor dan materi.
  *

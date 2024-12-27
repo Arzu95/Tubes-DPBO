@@ -2,10 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.tubes_dpbo;
+package tubes.dpbo.feature;
 
 import java.util.HashMap;
 import java.util.List;
+import tubes.dpbo.common.CrudInterface;
 
 public class Supplier implements CrudInterface<Supplier> {
     private int idSupplier;

@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.tubes_dpbo;
+package tubes.dpbo.feature;
 
+import tubes.dpbo.feature.Penjualan;
 import java.util.ArrayList;
 import java.util.List;
 /**
@@ -14,7 +15,7 @@ import java.util.List;
 public class Pendapatan {
     private String tanggal;
     private double totalPendapatan;
-    private List<Penjualan> listPenjualan;
+    private ArrayList<Penjualan> listPenjualan;
 
     public Pendapatan(String tanggal) {
         this.tanggal = tanggal;
@@ -23,7 +24,8 @@ public class Pendapatan {
     }
 
     public void hitungTotalPendapatan() {
-        totalPendapatan = listPenjualan.size() * 100; 
+        //hitung disini
+        
         System.out.println("Total pendapatan pada tanggal " + tanggal + " adalah: " + totalPendapatan);
     }
 
