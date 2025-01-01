@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public interface CrudInterface<T> {
     HashMap<Integer, ArrayList<T>> get();
-    T getById(int id);
+    T cariBerdasarkanId(int id);
     void create(T entity);
     void update(T entity);
     void delete(int id);
