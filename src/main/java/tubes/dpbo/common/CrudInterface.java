@@ -5,14 +5,14 @@
 package tubes.dpbo.common;
 
 import java.util.HashMap;
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  *
  * @author riyan
  */
 public interface CrudInterface<T> {
-    HashMap<Integer, List<T>> get();
+    HashMap<Integer, ArrayList<T>> get();
     T getById(int id);
     void create(T entity);
     void update(T entity);
