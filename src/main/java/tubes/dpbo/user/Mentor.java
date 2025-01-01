@@ -6,12 +6,11 @@ package tubes.dpbo.user;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class Mentor extends User {
-    private List<String> listKelas;
-    private List<LocalDate> ketersediaan;
+    private ArrayList<String> listKelas;
+    private ArrayList<LocalDate> ketersediaan;
 
     public Mentor(int userId, String nama) {
         super(userId, nama);
@@ -19,28 +18,28 @@ public class Mentor extends User {
         this.ketersediaan = new ArrayList<>();
     }
 
-    public void addKelas(String kelas) {
+    public void tambahKelas(String kelas) {
         listKelas.add(kelas);
         System.out.println("Kelas " + kelas + " berhasil ditambahkan.");
     }
 
-    public void updateKetersediaan(LocalDate tanggal) {
+    public void perbaruiKetersediaan(LocalDate tanggal) {
         ketersediaan.add(tanggal);
         System.out.println("Ketersediaan berhasil diupdate pada: " + tanggal);
     }
 
-    public void showKetersediaan() {
+    public void tampilkanKetersediaan() {
         System.out.println("Ketersediaan mentor " + super.getNama() + ":");
         for (LocalDate tanggal : ketersediaan) {
             System.out.println("- " + tanggal);
         }
     }
 
-    public List<String> getListKelas() {
+    public ArrayList<String> getListKelas() {
         return listKelas;
     }
 
-    public List<LocalDate> getKetersediaan() {
+    public ArrayList<LocalDate> getKetersediaan() {
         return ketersediaan;
     }
 }
