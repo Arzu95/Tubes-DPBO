@@ -6,7 +6,6 @@ package tubes.dpbo.feature;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import tubes.dpbo.common.CrudInterface;
 
 public class Item implements CrudInterface<Item> {
@@ -15,7 +14,7 @@ public class Item implements CrudInterface<Item> {
     private double hargaBarang;
     private String kategori;
 
-    private static List<Item> itemList = new ArrayList<>();
+    private static ArrayList<Item> itemList = new ArrayList<>();
 
     public Item(String namaBarang, int stok, double hargaBarang, String kategori) {
         this.namaBarang = namaBarang;
@@ -57,14 +56,14 @@ public class Item implements CrudInterface<Item> {
     }
 
     @Override
-    public HashMap<Integer, List<Item>> get() {
-        HashMap<Integer, List<Item>> categorizedItems = new HashMap<>();
+    public HashMap<Integer, ArrayList<Item>> get() {
+        HashMap<Integer, ArrayList<Item>> categorizedItems = new HashMap<>();
         int id = 1;
         for (Item item : itemList) {
-            List<Item> items = categorizedItems.get(id);
+            ArrayList<Item> items = categorizedItems.get(id);
             if (items == null) {
                 items = new ArrayList<>();
-                categorizedItems.put(id, items);
+                categorizedItems.put(id, (ArrayList<Item>) items);
             }
             items.add(item);
             id++;
@@ -73,7 +72,7 @@ public class Item implements CrudInterface<Item> {
     }
 
     @Override
-    public Item getById(int id) {
+    public Item cariBerdasarkanId(int id) {
         if (id > 0 && id <= itemList.size()) {
             System.out.println("Mencari item dengan ID: " + id);
             return itemList.get(id - 1);
@@ -111,7 +110,7 @@ public class Item implements CrudInterface<Item> {
         }
     }
 
-    public void showProductByCategory(String kategori) {
+    public void tampilkanBerdasarkanKategori(String kategori) {
         System.out.println("Menampilkan barang dengan kategori: " + kategori);
         boolean found = false;
         for (Item item : itemList) {
