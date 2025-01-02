@@ -1,11 +1,10 @@
-package tubes.dpbo.feature;
+package com.mycompany.tubes_dpbo;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import tubes.dpbo.common.CrudInterface;
 
-public class Hutang implements CrudInterface<Hutang> {
+public class Hutang implements crudInterface<Hutang> {
     private int idPenghutang;
     private String namaPenghutang;
     private String nomorTelepon;
@@ -13,7 +12,7 @@ public class Hutang implements CrudInterface<Hutang> {
     private double nilaiHutang;
     private boolean lunas;
     
-    private static List<Hutang> hutangList = new ArrayList<>();
+    private static ArrayList<Hutang> hutangList = new ArrayList<>();
 
     public Hutang(int idPenghutang, String namaPenghutang, String nomorTelepon, String alamat, double nilaiHutang, boolean lunas) {
         this.idPenghutang = idPenghutang;
@@ -63,8 +62,7 @@ public class Hutang implements CrudInterface<Hutang> {
     public void setNilaiHutang(double nilaiHutang) {
         this.nilaiHutang = nilaiHutang;
     }
-    
-    //sementara
+
     public boolean isLunas() {
         return lunas;
     }
@@ -77,10 +75,11 @@ public class Hutang implements CrudInterface<Hutang> {
     public HashMap<Integer,List <Hutang>> get() {
         HashMap<Integer, List <Hutang>> dataHutang = new HashMap<>();
             return dataHutang;
+
     }
 
     @Override
-    public Hutang getById(int id) {
+    public Hutang cariBerdasarkanId(int id) {
     for (Hutang hutang : hutangList) {
         if (hutang.getIdPenghutang() == id) {
             return hutang;
@@ -106,7 +105,7 @@ public class Hutang implements CrudInterface<Hutang> {
         entity.setLunas(true);
     }
     
-    public void displayHutang() {
+    public void tampilkanHutang() {
         System.out.println("ID Penghutang: " + idPenghutang);
         System.out.println("Nama Penghutang: " + namaPenghutang);
         System.out.println("Nomor Telepon: " + nomorTelepon);
